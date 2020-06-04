@@ -25,12 +25,12 @@ def result(request):
       
     paymentMonthly = 696
 
-    payment_yearly = float(paymentMonthly) * 12
-    paymentWeekly = payment_yearly / 52
+    paymentYearly = float(paymentMonthly) * 12
+    paymentWeekly = paymentYearly / 52
     paymentBiweekly = paymentWeekly * 2
     paymentSemimonthly = paymentMonthly / 2
 
-    context={'paymentMonthly':paymentMonthly, 'paymentWeekly':paymentWeekly, 'paymentBiweekly':paymentBiweekly, 'paymentSemimonthly':paymentSemimonthly, 'payment_yearly':payment_yearly}
+    context={'paymentMonthly':paymentMonthly, 'paymentWeekly':paymentWeekly, 'paymentBiweekly':paymentBiweekly, 'paymentSemimonthly':paymentSemimonthly, 'paymentYearly':paymentYearly}
    
 
     return render(request, 'cal/result.html', context)

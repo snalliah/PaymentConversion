@@ -14,18 +14,48 @@
         background-color: #ebeff5;
     }
 
-    #total-orders {
+    #monthly {
+        background-color: #4cb4a7;
+    }
+
+    #weekly {
         background-color: #4cb4c7;
     }
 
-    #orders-delivered {
+    #bi-weekly {
         background-color: #7abecc;
     }
 
-    #orders-pending {
+    #semi-monthly {
         background-color: #7cd1c0;
     }
+
+    
+    #yearly {
+        background-color: #7cd1a0;
+    }
 </style>
+
+
+
+
+<div class="row">
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center mb-3" id="monthly">
+                <div class="card-header">
+                    <h5 class="card-title">Monthly</h5>
+                </div>
+                <div class="class-body">
+                    <h3 class="card-title">{{paymentMonthly|floatformat:2}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br />
 
 <div class="row">
     <div class="col">
@@ -62,6 +92,18 @@
                 </div>
                 <div class="class-body">
                     <h3 class="card-title">{{paymentSemimonthly|floatformat:2}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="col-md">
+            <div class="card text-center mb-3" id="yearly">
+                <div class="card-header">
+                    <h5 class="card-title">Yearly</h5>
+                </div>
+                <div class="class-body">
+                    <h3 class="card-title">{{paymentYearly|floatformat:2}}</h3>
                 </div>
             </div>
         </div>
