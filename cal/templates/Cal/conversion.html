@@ -1,0 +1,31 @@
+﻿{% extends 'cal/base.html' %}
+
+
+{% block content %}
+
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">Monthly Payment</h5>
+    <p class="card-text">Please enter you monthly payment below, we'll provide you the amont of weekly, bi-weekly, semi montthly payment.</p>
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+    <span class="input-group-text">0.00</span>
+  </div>
+ 
+         <form action="" method="POST">
+            {% csrf_token %}
+              
+            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+          
+         </form>  
+  </div>
+      
+      To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd>
+      <a href="{% url 'result' %}" class="btn btn-primary">Calculate</a>
+  </div>
+</div>
+
+    
+{% endblock %}
