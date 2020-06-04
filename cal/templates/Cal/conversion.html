@@ -6,25 +6,21 @@
 <div class="card w-75">
   <div class="card-body">
     <h5 class="card-title">Monthly Payment</h5>
-    <p class="card-text">Please enter you monthly payment below, we'll provide you the amont of weekly, bi-weekly, semi montthly payment.</p>
+    <p class="card-text">Please enter you monthly payment below, we'll provide you the amont of weekly, bi-weekly, semi monthly payment.</p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
             <span class="input-group-text">$</span>
        
  
-             <form action="" method="POST">
-                {% csrf_token %}
-              
-                Amount:<input id="amount" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-          
+             <form action="result">
+               
+               
+                Amount : <input type="text" name="amount">
+                <input type="submit" />
              </form>  
 
         </div>
     </div>
-      
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-    <a href="{% url 'result' %}"  id="myButton" onclick="buttonCode" class="btn btn-primary">Calculate</a>
 
   </div>
 </div>
