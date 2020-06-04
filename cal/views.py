@@ -22,7 +22,7 @@ def result(request, *args, **kwargs):
     #paymentSemimonthly = conversion(payment_semimonthly)
 
       
-    paymentMonthly = request.GET.get("amount")
+    paymentMonthly = request.POST["amount"]
     print(paymentMonthly)
     paymentYearly = (float(paymentMonthly)) * 12
     paymentWeekly = float(paymentYearly) / 52

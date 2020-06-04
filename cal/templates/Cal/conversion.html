@@ -5,18 +5,16 @@
 
 <div class="card w-75">
   <div class="card-body">
-    <h5 class="card-title">Monthly Payment</h5>
-    <p class="card-text">Please enter you monthly payment below, we'll provide you the amont of weekly, bi-weekly, semi monthly payment.</p>
-    <div class="input-group mb-2">
+    <h3 class="card-title">Please Enter the monthly payment amount</h3>
+    <h5 class="card-text">We'll provide you the amont in Weekly, Bi-Weekly, Semi Monthly and yearly payment.</h5>
+    <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text">$</span>
-       
  
-             <form action="result">
+             <form action="result" method="post">
+               {% csrf_token %}
                
-               
-                Amount : <input type="text" name="amount">
-                <input type="submit" />
+                Monthly Payment $: <input type="text" name="amount">
+                <input type="submit">
              </form>  
 
         </div>
