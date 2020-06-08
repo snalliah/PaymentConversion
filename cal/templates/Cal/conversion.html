@@ -3,23 +3,34 @@
 
 {% block content %}
 
-<div class="card w-75">
+
+<div class="card">
+  <h5 class="card-header">
+      Hello, {{greet}}
+   
+
+
+  </h5>
   <div class="card-body">
-    <h3 class="card-title">Please Enter the monthly payment amount</h3>
-    <h5 class="card-text">We'll provide you the amont in Weekly, Bi-Weekly, Semi Monthly and yearly payment.</h5>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
- 
-             <form action="result" method="post">
+    <h5 class="card-title">Please Enter the payment amount</h5>
+    <p class="card-text">We'll provide you the amounts in <b>Monthly, Weekly, Bi-Weekly, Semi Monthly and yearly payment.</b></p>
+
+      <div class="input-group col-sm-6" >
+            <form action="result" method="post">
                {% csrf_token %}
-               
-                Monthly Payment $: <input type="text" name="amount">
-                <input type="submit">
-             </form>  
-
-        </div>
-    </div>
-
+                <select class="custom-select" name="inputSelect" aria-label="Example select with button addon">
+                        <option selected>Choose...</option>
+                        <option value="1">Weekly</option>
+                        <option value="2">Monthly</option>                     
+                </select>
+            
+                <div class="card-body">           
+                    <p class="card-text"> Payment amount $: <input type="text" name="month_amount">  </p>             
+                    <input type="submit" a href="{% url 'result' %}" class="btn btn-primary">
+                </div>
+            </form>  
+        
+      </div>
   </div>
 </div>
 

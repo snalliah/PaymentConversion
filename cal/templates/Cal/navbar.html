@@ -1,16 +1,27 @@
 ﻿
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Matrix</a>
+  <a class="navbar-brand" href="{% url 'conversion' %}">Matrix</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active" href="{% url 'conversion' %}">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Features</a>
-      <a class="nav-item nav-link" href="#">About</a>
+      <a class="nav-item nav-link disabled" href="https://www.markham.ca/wps/portal/home/about/COVID-19-Information">COVID-19</a>#}
+      <a class="nav-item nav-link active" href="{% url 'about' %}">About</a>#}
       <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Admin</a>
     </div>
   </div>
 </nav>
+
+
+<div class="fixed-bottom">
+    <nav class="nav nav-pills flex-column flex-sm-row">
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Company</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Developers</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Resource</a>
+      <a class="flex-sm-fill text-sm-center nav-link" href="#">Product Help</a>
+    </nav>
+    <p class="font-italic">Copyright Matrix&copy; {% now 'Y' %}.</p>
+</div>

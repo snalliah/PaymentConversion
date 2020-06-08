@@ -36,6 +36,12 @@
     <Compile Include="cal\conversion.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="cal\greeting.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cal\html5type.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Cal\migrations\__init__.py" />
     <Compile Include="cal\models.py" />
     <Compile Include="cal\tests.py" />
@@ -51,6 +57,7 @@
     <Compile Include="PaymentConversion\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Cal\templates\cal\about.html" />
     <Content Include="Cal\templates\cal\base.html" />
     <Content Include="Cal\templates\cal\conversion.html" />
     <Content Include="Cal\templates\cal\index.html" />
