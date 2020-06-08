@@ -63,6 +63,7 @@
     <Content Include="Cal\templates\cal\index.html" />
     <Content Include="Cal\templates\cal\navbar.html" />
     <Content Include="Cal\templates\cal\result.html" />
+    <Content Include="Cal\templates\cal\test.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>

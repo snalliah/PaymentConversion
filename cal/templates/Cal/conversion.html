@@ -15,22 +15,28 @@
     <h5 class="card-title">Please Enter the payment amount</h5>
     <p class="card-text">We'll provide you the amounts in <b>Monthly, Weekly, Bi-Weekly, Semi Monthly and yearly payment.</b></p>
 
-      <div class="input-group col-sm-6" >
-            <form action="result" method="post">
-               {% csrf_token %}
-                <select class="custom-select" name="inputSelect" aria-label="Example select with button addon">
-                        <option selected>Choose...</option>
-                        <option value="1">Weekly</option>
-                        <option value="2">Monthly</option>                     
-                </select>
-            
-                <div class="card-body">           
-                    <p class="card-text"> Payment amount $: <input type="text" name="month_amount">  </p>             
-                    <input type="submit" a href="{% url 'result' %}" class="btn btn-primary">
-                </div>
-            </form>  
+        <form action="result" method="post">
+        {% csrf_token %}
         
-      </div>
+            
+            
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline1" value="1" name="customRadioInline1" class="custom-control-input" required>
+          <label class="custom-control-label" for="customRadioInline1">Monthly</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline2" value="2" name="customRadioInline1" class="custom-control-input" required>
+          <label class="custom-control-label" for="customRadioInline2">Weekly</label>
+        </div>
+
+  
+        <div class="card-body">           
+            <p class="card-text was-validated"> Payment amount $: <input type="text" name="month_amount"  required>  </p>             
+            <input type="submit" a href="{% url 'result' %}" class="btn btn-primary" onkeypress="return (event.charCode !=8 && event.charCode == 0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
+           
+        </div>
+        </form>  
+
   </div>
 </div>
 
