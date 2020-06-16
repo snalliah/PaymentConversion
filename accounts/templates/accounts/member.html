@@ -1,0 +1,18 @@
+﻿{% extends 'cal/base.html' %}
+{% block content %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="cfixed-right">
+            <div class="navbar-nav">
+                <span class="hello-msg">Hello, {{request.user}}</span>
+               
+                <a class="nav-item nav-link active" href="{% url 'conversion' %}">Update<span class="sr-only">(current)</span></a>
+               
+
+
+
+            </div>
+        </div>
+    </nav>
+{% endblock %}

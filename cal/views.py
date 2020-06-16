@@ -4,11 +4,27 @@ import datetime
 
 
 # Create your views here.
-   
-def conversion(request):
 
+def home(request):
+   
+
+ #   mes = print('test')
+
+    context={}
+    return render(request, 'cal/home.html', context)
+
+def navbar(reqeust):
     now = datetime.datetime.now()
-    time = datetime.datetime.now().strftime('%H:%M:%S')
+    time = now.strftime("%H:%M:%S")
+
+
+
+
+    context={'time':time}
+    return render(request, 'cal/navbar.html', context)
+    
+def conversion(request):
+    now = datetime.datetime.now()
     currentTime = now.hour  
 
     if currentTime < 12 :
@@ -22,7 +38,8 @@ def conversion(request):
 
 
 
-    context={'greet':greet, 'currentTime':currentTime, 'time':time}
+    context={'greet':greet, 'currentTime':currentTime,}
+
     return render(request, 'cal/conversion.html', context)
 
 
@@ -30,25 +47,29 @@ def conversion(request):
 def result(request, *args, **kwargs):
     
     if request.method == 'POST':
-        user_payment = float(request.POST.get('month_amount'))
+        user_input = (request.POST.get('input_amount'))
         option = request.POST.get('customRadioInline1')
+       
+       # try:
+        user_payment = float(user_input)
+       # except ValueError as error:
+       #     print(error)
+
+       
         
         print('checking the option selected from dropdown menu')
         print(option)
-        
-       # try:
-        #    amount = float(user_payment)
-        #    print("Input is a float  number. Number = ", val)
-       # except ValueError:
-       #     print("No.. input is not a number. It's a string")
-
-       #amount = float(user_payment)
-
         if option == '1':                
             paymentYearly = user_payment * 12
             
-        else:
+        elif option == '2':
             paymentYearly = user_payment * 52
+        elif option == '3':
+            paymentYearly = user_payment * 26
+        elif option == '4':
+            paymentYearly = user_payment * 24
+        else:
+            paymentYearly = user_payment
         
         paymentMonthly = paymentYearly / 12
         paymentWeekly = paymentYearly / 52
@@ -56,11 +77,11 @@ def result(request, *args, **kwargs):
         paymentSemimonthly = paymentMonthly / 2
 
         
-        print('have a nice day')
-    context={'paymentMonthly':paymentMonthly, 'paymentWeekly':paymentWeekly, 'paymentBiweekly':paymentBiweekly, 'paymentSemimonthly':paymentSemimonthly, 'paymentYearly':paymentYearly,}
+        
+        context={'paymentYearly':paymentYearly, 'paymentMonthly':paymentMonthly, 'paymentWeekly':paymentWeekly, 'paymentBiweekly':paymentBiweekly, 'paymentSemimonthly':paymentSemimonthly,}
    
-
-    return render(request, 'cal/result.html', context)
+   # else:
+        return render(request, 'cal/result.html', context)
 
 def about(request):
     

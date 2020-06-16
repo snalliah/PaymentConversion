@@ -1,6 +1,4 @@
 ﻿{% extends 'cal/base.html' %}
-
-
 {% block content %}
 
 
@@ -13,7 +11,7 @@
   </h5>
   <div class="card-body">
     <h5 class="card-title">Please Enter the payment amount</h5>
-    <p class="card-text">We'll provide you the amounts in <b>Monthly, Weekly, Bi-Weekly, Semi Monthly and yearly payment.</b></p>
+    <p class="card-text">We'll provide you the amount in <b>Monthly, Weekly, Bi-Weekly, Semi Monthly and yearly payments.</b></p>
 
         <form action="result" method="post">
         {% csrf_token %}
@@ -28,17 +26,31 @@
           <input type="radio" id="customRadioInline2" value="2" name="customRadioInline1" class="custom-control-input" required>
           <label class="custom-control-label" for="customRadioInline2">Weekly</label>
         </div>
+    
+        <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline3" value="3" name="customRadioInline1" class="custom-control-input" required>
+          <label class="custom-control-label" for="customRadioInline3">Bi-Weekly</label>
+        </div>
+          <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline4" value="4" name="customRadioInline1" class="custom-control-input" required>
+          <label class="custom-control-label" for="customRadioInline4">Semi-Monthly</label>
+        </div>
+          <div class="custom-control custom-radio custom-control-inline">
+          <input type="radio" id="customRadioInline5" value="5" name="customRadioInline1" class="custom-control-input" required>
+          <label class="custom-control-label" for="customRadioInline5">Yearly</label>
+        </div>
 
-  
+ 
         <div class="card-body">           
-            <p class="card-text was-validated"> Payment amount $: <input type="text" name="month_amount"  required>  </p>             
+            <p class="card-text was-validated"> Payment amount $: <input type="text" name="input_amount"  required>  </p>             
             <input type="submit" a href="{% url 'result' %}" class="btn btn-primary" onkeypress="return (event.charCode !=8 && event.charCode == 0 || ( event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57)))">
            
         </div>
         </form>  
 
   </div>
+    
 </div>
 
-    
+   
 {% endblock %}

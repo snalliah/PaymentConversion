@@ -31,6 +31,19 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="accounts\admin.py" />
+    <Compile Include="accounts\apps.py" />
+    <Compile Include="accounts\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="accounts\migrations\__init__.py" />
+    <Compile Include="accounts\models.py" />
+    <Compile Include="accounts\tests.py" />
+    <Compile Include="accounts\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="accounts\views.py" />
+    <Compile Include="accounts\__init__.py" />
     <Compile Include="cal\admin.py" />
     <Compile Include="cal\apps.py" />
     <Compile Include="cal\conversion.py">
@@ -57,9 +70,15 @@
     <Compile Include="PaymentConversion\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="accounts\templates\accounts\index.html" />
+    <Content Include="accounts\templates\accounts\login.html" />
+    <Content Include="accounts\templates\accounts\profileUpdate.html" />
+    <Content Include="accounts\templates\accounts\register.html" />
+    <Content Include="accounts\templates\accounts\member.html" />
     <Content Include="Cal\templates\cal\about.html" />
     <Content Include="Cal\templates\cal\base.html" />
     <Content Include="Cal\templates\cal\conversion.html" />
+    <Content Include="Cal\templates\cal\home.html" />
     <Content Include="Cal\templates\cal\index.html" />
     <Content Include="Cal\templates\cal\navbar.html" />
     <Content Include="Cal\templates\cal\result.html" />
@@ -67,8 +86,17 @@
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="accounts\" />
+    <Folder Include="accounts\migrations\" />
+    <Folder Include="accounts\templates\" />
+    <Folder Include="accounts\templates\accounts\" />
     <Folder Include="cal\" />
     <Folder Include="Cal\migrations\" />
+    <Folder Include="media\" />
+    <Folder Include="static\" />
+    <Folder Include="static\image\" />
+    <Folder Include="static\css\" />
+    <Folder Include="static\js\" />
     <Folder Include="Cal\templates\" />
     <Folder Include="Cal\templates\cal\" />
     <Folder Include="PaymentConversion\" />
